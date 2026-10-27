@@ -1,18 +1,23 @@
-public class App {
+import src.BankAccount;
+import src.Student;
+
+public class app {
     public static void main(String[] args) {
-        int a = 5;
-        int b = 10;
-        char c = 'a';
-        double d = 3.14;
-        boolean e = true;
-        String f = "hello";
+        BankAccount acc = new BankAccount("0383181564","toan",10000);
+        
+        System.out.println("So tai khoan:" + acc.getAccountNumber());
+        System.out.println("Ten chu tai khoan:" + acc.getOwnerName());
+        System.out.println("So du hien tai:" + acc.getBalance());
+        
+        System.out.println("\n------NAP TIEN------");
+        acc.deposit(5000);
 
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
-        System.out.println(d);
-        System.out.println(e);
-        System.out.println(f);
-
+        System.out.println("\n------RUT TIEN------");
+        acc.withdraw(2000);
+        
+        System.out.println("\n------SO DU CUOI CUNG------");
+        acc.deposit(5000);
+        acc.withdraw(10000);
+        System.out.println("So du hien tai:" + acc.getBalance());
     }
 }

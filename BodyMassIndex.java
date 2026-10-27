@@ -7,9 +7,9 @@ public class BodyMassIndex {
         double weight = sc.nextDouble();
         System.out.println("nhap so chieu cao:");
         double height = sc.nextDouble();
-        double bmi = weight/height*height;
+        double bmi = weight/(height*height);
         if(bmi < 18.5){
-            System.out.println("bmi:" + bmi + "suy dinh duong");;
+            System.out.println("bmi:" + bmi + "suy dinh duong");
         }
         else if (bmi < 25 || bmi > 18.5){
             System.out.println("bmi:" + bmi + "nguoi binh thuong");
