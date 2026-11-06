@@ -1,31 +1,56 @@
-
 package src;
-
 public class Main {
     public static void main(String[] args) {
+         Payment[] payments = new Payment[6];
 
-        Employee e1 = new FullTimeEmployee(
-            "NV01", "Nguyen Van A", 15000000, 3000000
+        
+        payments[0] = new CreditCardPayment(
+            1000000,
+            "1234567890123456",
+            "123",
+            "12/2028"
         );
 
-        Employee e2 = new Intern(
-            "NV02", "Nguyen Van B", 5000000, 0.8
+        
+        payments[1] = new CreditCardPayment(
+            1000000,
+            "123456",
+            "123",
+            "12/2028"
         );
 
-        Employee e3 = new FullTimeEmployee(
-            "NV03", "Nguyen Van C", 12000000, 2000000
+        
+        payments[2] = new EWalletPayment(
+            200000,
+            "0987654321",
+            500000
         );
 
-        e1.displayInfo();
-        System.out.println("----------------");
+       
+        payments[3] = new EWalletPayment(
+            500000,
+            "0987654321",
+            100000
+        );
 
-        e2.displayInfo();
-        System.out.println("----------------");
+       
+        payments[4] = new BankTransferPayment(
+            300000,
+            "123456789",
+            "Vietcombank"
+        );
 
-        e3.displayInfo();
-        System.out.println("----------------");
+        
+        payments[5] = new BankTransferPayment(
+            300000,
+            "123456789",
+            ""
+        );
 
-        System.out.println("Tong so nhan vien: "
-                + Employee.getCount());
+        
+        for (Payment payment : payments) {
+            payment.processPayment();
+        }
+    
     }
 }
